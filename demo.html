@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MLA Printing Hub || Your Imagination, Our Printing</title>
+  <link rel="icon" href="images/logo/MlaPrintingHubLogo.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fef6ff;
+      color: #333;
+    }
+
+    header {
+      background: #b40000;
+      color: white;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0px;
+    }
+
+    .logo img {
+      height: 60px;
+    }
+
+    .logo-text h1 {
+      font-size: 1.4rem;
+      margin: 0;
+      color: #fff;
+    }
+
+    .logo-text p {
+      font-size: 0.8rem;
+      margin: 0;
+      color: #ffd900;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background-color: #ffd900;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(220 197 197 / 70%), rgba(180, 0, 0, 0.7)), url('images/banner/1.jpg') no-repeat center/cover;
+      text-align: center;
+      padding: 100px 20px;
+      color: white;
+    }
+
+     .logo-text h1 {
+        color: #ffd900;
+
+      } 
+    .logo-text p {
+        color: #ffffff;
+
+      }     
+
+    .hero h1 {
+      font-size: 3rem;
+      color: #ffd900;
+      animation: fadeIn 1.2s ease-out;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin-top: 15px;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2rem;
+      color: #d3ae41;
+    }
+
+    .gallery, .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff9fb;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s, border 0.3s;
+      text-align: center;
+      border: 2px solid transparent;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #b40000;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .card img {
+      max-width: 100%;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .testimonials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .testimonial {
+      flex: 1 1 300px;
+      background: #fff8f5;
+      padding: 20px;
+      border-left: 5px solid #b40000;
+      border-radius: 8px;
+    }
+
+    .counters {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      padding: 40px 10px;
+      background: #fff4e6;
+      border-radius: 10px;
+      margin-bottom: 60px;
+    }
+
+    .counter h3 {
+      font-size: 2.5rem;
+      color: #b40000;
+    }
+
+    .cta {
+      background: #3f0097;
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+      border-radius: 10px;
+    }
+
+    .cta h2 {
+      margin-bottom: 10px;
+    }
+
+    .cta p {
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+    }
+
+    .cta a {
+      padding: 12px 25px;
+      background: #25D366;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+
+    .cta a i {
+      margin-right: 8px;
+    }
+
+    .cta a:hover {
+      background: #1ebe5d;
+    }
+
+    .contact-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 30px;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .contact-details {
+      flex: 1 1 300px;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .contact-details i {
+      margin-right: 10px;
+    }
+
+    .map-frame {
+      flex: 1 1 500px;
+      height: 400px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      background: #222;
+      color: #ccc;
+      padding: 15px 20px;
+      font-size: 0.95rem;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .footer-left,
+    .footer-right {
+      display: flex;
+      align-items: center;
+      gap: 0px;
+    }
+
+    .footer-right img {
+      height: 24px;
+    }
+
+    .footer-right a {
+      color: #ffd900;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-right a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .header-content,
+      .footer-row {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .counters {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .cta a {
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      .contact-wrapper {
+        flex-direction: column;
+      }
+
+      .map-frame {
+        height: 300px;
+      }hero 
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+
+  <header>
+  <div class="header-content">
+    <div class="logo">
+      <img src="images/logo/MlaPrintingHubLogo.png" alt="RKMatrix Logo" />
+      <div class="logo-text">
+        <h1>MLA Printing Hub</h1>
+        <p>Your Imagination, Our Printing.</p>
+      </div>
+    </div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#work">Our Work</a>
+      <a href="#testimonials">Clients</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+
+  <div class="hero">
+    <h1>High-Quality Printing for Every Need</h1>
+    <p>From design to delivery, we print your vision.</p>
+  </div>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="card">
+        <img src="images/Services/BusinessCards/1.jpg" alt="Business Cards">
+        <h3>Business Cards</h3>
+      </div>
+      <div class="card">
+        <img src="images/Services/FlyersBrochures/1.jpg" alt="Flyers">
+        <h3>Flyers & Brochures</h3>
+      </div>
+      <div class="card">
+        <img src="images/Services/BannersPosters/1.jpg" alt="Banners">
+        <h3>Banners & Posters</h3>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <h2>Our Work</h2>
+    <div class="gallery">
+      <div class="card">
+        <img src="images/Works/WeddingCard/1.webp" alt="Wedding Card">
+        <p>Premium Wedding Cards</p>
+      </div>
+      <div class="card">
+        <img src="images/Works/CorporateBooklets/1.jpg" alt="Booklet">
+        <p>Corporate Booklets</p>
+      </div>
+      <div class="card">
+        <img src="images/Works/CustomStoreSignage/1.avif" alt="Sign">
+        <p>Custom Store Signage</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="counters">
+    <div class="counter">
+      <h3>1000+</h3>
+      <p>Projects Completed</p>
+    </div>
+    <div class="counter">
+      <h3>800+</h3>
+      <p>Happy Clients</p>
+    </div>
+    <div class="counter">
+      <h3>12+</h3>
+      <p>Years of Experience</p>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <h2>Client Testimonials</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>“Printing Hub exceeded our expectations. The print quality and turnaround time were exceptional!”</p>
+        <strong>- Anjali Verma</strong>
+      </div>
+      <div class="testimonial">
+        <p>“Professional team, great customer service, and beautiful prints for our event.”</p>
+        <strong>- Rohit Sharma</strong>
+      </div>
+<div class="testimonial">
+        <p>“Professional team, great customer service, and beautiful prints for our event.”</p>
+        <strong>- Rohit Sharma</strong>
+      </div>
+<div class="testimonial">
+        <p>“Professional team, great customer service, and beautiful prints for our event.”</p>
+        <strong>- Rohit Sharma</strong>
+      </div>
+<div class="testimonial">
+        <p>“Professional team, great customer service, and beautiful prints for our event.”</p>
+        <strong>- Rohit Sharma</strong>
+      </div>
+<div class="testimonial">
+        <p>“Professional team, great customer service, and beautiful prints for our event.”</p>
+        <strong>- Rohit Sharma</strong>
+      </div>
+    </div>
+  </section>
+
+   <section class="cta">
+    <h2>Need a Custom Printing Quote?</h2>
+    <p>Let us know your requirements and we'll get back to you quickly with the best pricing and options.</p>
+    <a href="https://wa.me/918115122893" target="_blank"><i class="fab fa-whatsapp"></i> Get in Touch on WhatsApp</a>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-wrapper">
+      <div class="contact-details">
+        <p><i class="fas fa-envelope" style="color: #00bcd4;"></i> <strong>Email:</strong> ______@gmail.com</p>
+        <p><i class="fas fa-phone" style="color: #4caf50;"></i> <strong>Phone:</strong> +91-8115122893, +91-8931980707</p>
+        <p><i class="fas fa-map-marker-alt" style="color: #e91e63;"></i> <strong>Location:</strong> Kotwali Road, Teachers Colony, Baberu, Banda, UP 210121</p>
+
+   </br>
+        <p>
+          <a href="#" target="_blank" style="color: #1877f2; text-decoration: none;">
+            <i class="fab fa-facebook-square" style="font-size: 1.5rem; margin-right: 8px;"></i>
+            <strong>Follow us on Facebook</strong>
+          </a>
+        </p>
+
+        <p>
+          <a href="#" target="_blank" style="color: #833AB4; text-decoration: none;">
+            <i class="fab fa-instagram" style="font-size: 1.5rem; margin-right: 8px;"></i>
+            <strong>Follow us on Instagram</strong>
+          </a>
+        </p>
+      </div>
+
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3599.662153877772!2d80.69528585402985!3d25.54962828874291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399caf7e77207727%3A0x76dad9977b24278f!2sKotwali%20baberu!5e0!3m2!1sen!2sin!4v1752350748283!5m2!1sen!2sin" 
+  width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+   <footer>
+  <div class="footer-row">
+    <div class="footer-left">
+      <p>&copy; 2025 MLA Printing Hub. All rights reserved.</p>
+    </div>
+    <div class="footer-right">
+      <span>Website developed by</span>
+      <img src="images/logo/rklogo.png" alt="Developer Logo" />
+      <a href="https://www.rkmatrix.co.in/" target="_blank">RKMatrix – Innovative Software Solutions</a>
+    </div>
+  </div>
+</footer>
+
+
+<button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+    style="position: fixed; bottom: 20px; right: 20px; background: #b40000; color: white; border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 18px; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.2); z-index: 999;">
+    ↑
+  </button>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>AOS.init();</script>
+
+</body>
+</html>
